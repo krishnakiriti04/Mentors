@@ -1,6 +1,6 @@
 let mentordata;
 async function loaddata() {
-    let dataraw = await fetch("http://localhost:4000/api/mentor");
+    let dataraw = await fetch("https://zen-mentors.herokuapp.com/api/mentor");
     mentordata = await dataraw.json();
     let table = document.getElementById('mentordata');
 
@@ -44,7 +44,7 @@ async function addmentor() {
         company: document.getElementById('company').value
     }
 
-    await fetch('http://localhost:4000/api/mentor', {
+    await fetch('https://zen-mentors.herokuapp.com/api/mentor', {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -73,7 +73,7 @@ async function addstudent() {
         mentor: document.getElementById('mentor').value
     }
 
-    await fetch('http://localhost:4000/api/student', {
+    await fetch('https://zen-mentors.herokuapp.com/api/student', {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
@@ -87,11 +87,11 @@ async function addstudent() {
 //delete mentor
 async function deletementor(mentorid) {
     try {
-        let res = await fetch(`http://localhost:4000/api/mentor/${mentorid}`, {
+        let res = await fetch(`https://zen-mentors.herokuapp.com/api/mentor/${mentorid}`, {
             method: "DELETE"
         })
         let resdata = await console.log("Deleted mentor");
-        window.location.href = "http://localhost:4000/";
+        window.location.href = "https://zen-mentors.herokuapp.com/";
 
     } catch (err) {
         console.log('Issue with connection:' + err)
@@ -100,7 +100,7 @@ async function deletementor(mentorid) {
 
 async function getstudent(mentorname) {
     try {
-        let rawdata = await fetch(`http://localhost:4000/api/student/${mentorname}`);
+        let rawdata = await fetch(`https://zen-mentors.herokuapp.com/api/student/${mentorname}`);
         let studentdata = await rawdata.json();
 
         let tr = document.getElementById(mentorname);
