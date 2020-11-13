@@ -11,7 +11,7 @@ const url = process.env.DB_URL || "mongodb://localhost:27017";
 const port = process.env.PORT || 4000;
 
 //configuration
-//app.use(express.static(path.join(__dirname, "files")));
+app.use(express.static(path.join(__dirname, "files")));
 app.use(bodyParser.json());
 app.use(cors());
 
