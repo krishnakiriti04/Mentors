@@ -1,4 +1,4 @@
 # Deployment Link
 
-(<https://zen-mentors.herokuapp.com/>)
+<https://zen-mentors.herokuapp.com/>
 
